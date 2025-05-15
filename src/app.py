@@ -116,6 +116,6 @@ def index():
     # GET method - render the form with template keys
     return render_template("email_form.html", templates=templates)
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
